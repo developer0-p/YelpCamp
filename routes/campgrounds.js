@@ -17,7 +17,7 @@ router.get("/",function (req, res) {
         } else {
             res.render("campgrounds/index", {campgrounds: allCampground, currentUser: req.user});
             //console.log("We just create a new campground");
-            //console.log(campground);
+            //console.log(currentUser);
         }
     });
 });
