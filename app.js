@@ -16,6 +16,7 @@ var commentRoutes       = require("./routes/comments"),
     indexRoutes          = require("./routes/index")
 
 // console.log(process.env.DATABASEURL);
+
 mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
 //mongoose.connect("mongodb://pablo:dominguez@ds153003.mlab.com:53003/yelpcamp2017", {useMongoClient: true});
 // mongodb://<dbuser>:<dbpassword>@ds153003.mlab.com:53003/yelpcamp2017

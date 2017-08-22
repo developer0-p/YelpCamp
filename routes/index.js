@@ -40,8 +40,17 @@ router.post("/register", function(req, res){
 //show login form
 router.get("/login", function(req, res) {
     res.render("login");
+    console.log(req.successRedirect);
+    console.log(req.failureRedirect);
+    
 });
 //handling login logic
+// router.post("/login", function(req, res) {
+//         passport.authenticate("local")(req, res, function(){
+//                 req.flash("success", "Welcome to YelpCamp " + user.username );
+//                 res.redirect("/campgrounds");   
+//             })
+// });
 router.post("/login", passport.authenticate("local",
     {
         successRedirect: "/campgrounds",
@@ -50,6 +59,9 @@ router.post("/login", passport.authenticate("local",
     console.log(req.successRedirect);
     res.send("logic login happens here");
 });
+
+
+
 //log out route
 router.get("/logout", function(req, res) {
     req.logout();
